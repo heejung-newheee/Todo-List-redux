@@ -45,19 +45,22 @@ function InputForm() {
     const submitHandler = (e) => {
         e.preventDefault();
 
-        // if (!title) {
-        //     alert('제목을 입력해 주세요');
-        // } else if (!contents) {
-        //     alert('내용을 입력해 주세요');
-        // }
-        const newAddTodo = {
-            id: uuid(),
-            title,
-            contents,
-            isDone: false
-        };
-        dispatch(addTodo(newAddTodo)); // ...todos...?
-        console.log('addTodo', addTodo);
+        if (!title) {
+            alert('제목을 입력해 주세요');
+        } else if (!contents) {
+            alert('내용을 입력해 주세요');
+        } else {
+            const newAddTodo = {
+                id: uuid(),
+                title,
+                contents,
+                isDone: false
+            };
+            dispatch(addTodo(newAddTodo)); // ...todos...?
+            // console.log('addTodo', addTodo);
+            setTitle('');
+            setContents('');
+        }
     };
 
     return (
@@ -66,7 +69,7 @@ function InputForm() {
             <InputArea>
                 <form onSubmit={submitHandler}>
                     {/* <Link>상세보기</Link> */}
-                    <Label style={{ lineHeight: '35px' }}>제목 </Label>
+                    <Label>제목 </Label>
                     <Input
                         type="text"
                         value={title}

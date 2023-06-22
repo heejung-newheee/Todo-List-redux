@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { styled } from 'styled-components';
 import { delTodo } from '../redux/modules/todos';
 import { switchDone } from '../redux/modules/todos';
+import { Link } from 'react-router-dom';
 
 // todo
 const TodoWrap = styled.div`
@@ -26,6 +27,7 @@ const Todo = styled.div`
     margin: 0 0 15px;
     p {
         height: 3rem;
+        width: 100%;
     }
 `;
 const TodoTit = styled.h3`
@@ -33,9 +35,6 @@ const TodoTit = styled.h3`
     font-weight: bold;
     margin-bottom: 10px;
     width: 100%;
-`;
-const TodoP = styled.p`
-    width: '100%';
 `;
 const TodoBtn = styled.button`
     width: 48%;
@@ -62,10 +61,16 @@ const DivLine = styled.div`
     background-color: #efefef;
     margin: 20px 0;
 `;
+
+const linkStyle = {
+    textDecoration: 'none',
+    paddingBottom: '20px',
+    color: '#555555'
+};
 function TodoBoard() {
     const todos = useSelector((state) => state.todos.todolists);
     const dispatch = useDispatch();
-    console.log('todos', todos);
+    // console.log('todos', todos);
     const delTodoHandle = (id) => {
         dispatch(delTodo(id));
     };
@@ -83,8 +88,11 @@ function TodoBoard() {
                         .map((todo) => {
                             return (
                                 <Todo key={todo.id} id={todo.id}>
+                                    <Link to={`/detail/${todo.id}`} style={linkStyle}>
+                                        상세보기
+                                    </Link>
                                     <TodoTit>{todo.title}</TodoTit>
-                                    <TodoP>{todo.contents}</TodoP>
+                                    <p>{todo.contents}</p>
                                     <TodoBtn color="red" onClick={() => delTodoHandle(todo.id)}>
                                         삭제
                                     </TodoBtn>
@@ -107,11 +115,15 @@ function TodoBoard() {
                         .map((todo) => {
                             return (
                                 <Todo key={todo.id} id={todo.id}>
+                                    <Link to={`/detail/${todo.id}`} style={linkStyle}>
+                                        상세보기
+                                    </Link>
                                     <TodoTit>{todo.title}</TodoTit>
-                                    <TodoP>{todo.contents}</TodoP>
+                                    <p>{todo.contents}</p>
                                     <TodoBtn color="red" onClick={() => delTodoHandle(todo.id)}>
                                         삭제
                                     </TodoBtn>
+
                                     <TodoBtn color="rgb(162, 162, 162)" onClick={() => switchDoneHandle(todo.id)}>
                                         {todo.isDone ? '취소' : '완료'}
                                     </TodoBtn>

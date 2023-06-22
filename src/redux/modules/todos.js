@@ -1,3 +1,4 @@
+import uuid from 'react-uuid';
 // state 의 그룹
 
 // action value
@@ -30,27 +31,9 @@ export const switchDone = (id) => {
 const initialState = {
     todolists: [
         {
-            id: 1,
-            title: '제목입니다1',
-            contents: '내용을 입력해 주세요1',
-            isDone: false
-        },
-        {
-            id: 2,
-            title: '제목입니다2',
-            contents: '내용을 입력해 주세요2',
-            isDone: true
-        },
-        {
-            id: 3,
-            title: '제목입니다3',
-            contents: '내용을 입력해 주세요3',
-            isDone: false
-        },
-        {
-            id: 4,
-            title: '제목입니다4',
-            contents: '내용을 입력해 주세요4',
+            id: uuid(),
+            title: '제목입니다',
+            contents: '내용을 입력해 주세요',
             isDone: false
         }
     ]
