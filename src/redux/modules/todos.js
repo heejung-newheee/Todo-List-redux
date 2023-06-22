@@ -1,14 +1,10 @@
 import uuid from 'react-uuid';
-// state 의 그룹
 
-// action value
 const ADD_TODO = 'todos/ADD_TODO';
 const DEL_TODO = 'todos/DEL_TODO';
 const SWITCH_DONE = 'todos/SWITCH_DONE';
 
-// action creator
 export const addTodo = (payload) => {
-    // console.log('ddddd', payload);
     return {
         type: ADD_TODO,
         payload
@@ -27,7 +23,6 @@ export const switchDone = (id) => {
     };
 };
 
-// todo 초기 상태값
 const initialState = {
     todolists: [
         {
@@ -38,9 +33,6 @@ const initialState = {
         }
     ]
 };
-
-// 리듀서 :  함수
-// input : state와 action
 
 const todos = (state = initialState, action) => {
     switch (action.type) {

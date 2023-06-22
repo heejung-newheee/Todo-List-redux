@@ -5,7 +5,6 @@ import { delTodo } from '../redux/modules/todos';
 import { switchDone } from '../redux/modules/todos';
 import { Link } from 'react-router-dom';
 
-// todo
 const TodoWrap = styled.div`
     display: flex;
     flex-wrap: wrap;
@@ -15,7 +14,6 @@ const TodoH2 = styled.h2`
     padding: 20px 0;
     font-weight: bold;
 `;
-
 const Todo = styled.div`
     width: calc((100% - 6vw) / 4);
     border: solid 3px rgb(162, 162, 162);
@@ -61,16 +59,15 @@ const DivLine = styled.div`
     background-color: #efefef;
     margin: 20px 0;
 `;
-
 const linkStyle = {
     textDecoration: 'none',
     paddingBottom: '20px',
     color: '#555555'
 };
+
 function TodoBoard() {
     const todos = useSelector((state) => state.todos.todolists);
     const dispatch = useDispatch();
-    // console.log('todos', todos);
     const delTodoHandle = (id) => {
         dispatch(delTodo(id));
     };
@@ -79,7 +76,6 @@ function TodoBoard() {
     };
     return (
         <section>
-            {/* contents 영역 */}
             <div className="working">
                 <TodoH2>Working</TodoH2>
                 <TodoWrap>

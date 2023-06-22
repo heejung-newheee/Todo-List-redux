@@ -49,8 +49,6 @@ const linkStyle = {
 function Detail() {
     const todos = useSelector((state) => state.todos.todolists);
     const params = useParams();
-    console.log('todos=>', todos);
-    console.log('params=>', params);
     return (
         <div>
             {todos

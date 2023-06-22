@@ -44,7 +44,6 @@ function InputForm() {
 
     const submitHandler = (e) => {
         e.preventDefault();
-
         if (!title) {
             alert('제목을 입력해 주세요');
         } else if (!contents) {
@@ -56,8 +55,7 @@ function InputForm() {
                 contents,
                 isDone: false
             };
-            dispatch(addTodo(newAddTodo)); // ...todos...?
-            // console.log('addTodo', addTodo);
+            dispatch(addTodo(newAddTodo));
             setTitle('');
             setContents('');
         }
@@ -65,10 +63,8 @@ function InputForm() {
 
     return (
         <section>
-            {/* input 영역 */}
             <InputArea>
                 <form onSubmit={submitHandler}>
-                    {/* <Link>상세보기</Link> */}
                     <Label>제목 </Label>
                     <Input
                         type="text"
