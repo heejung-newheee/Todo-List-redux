@@ -40,7 +40,6 @@ const todos = (state = initialState, action) => {
             return {
                 todolists: [...state.todolists, action.payload]
             };
-
         case DEL_TODO:
             return {
                 todolists: state.todolists.filter((item) => item.id !== action.id)

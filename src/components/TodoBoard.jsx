@@ -74,6 +74,7 @@ function TodoBoard() {
     const switchDoneHandle = (id) => {
         dispatch(switchDone(id));
     };
+
     return (
         <section>
             <div className="working">
@@ -92,7 +93,7 @@ function TodoBoard() {
                                     <TodoBtn color="red" onClick={() => delTodoHandle(todo.id)}>
                                         삭제
                                     </TodoBtn>
-                                    <TodoBtn color="rgb(13, 173, 198)" onClick={() => switchDoneHandle(todo.id)}>
+                                    <TodoBtn color={todo.isDone ? 'rgb(162, 162, 162)' : 'rgb(13, 173, 198)'} onClick={() => switchDoneHandle(todo.id)}>
                                         {todo.isDone ? '취소' : '완료'}
                                     </TodoBtn>
                                 </Todo>
@@ -119,7 +120,6 @@ function TodoBoard() {
                                     <TodoBtn color="red" onClick={() => delTodoHandle(todo.id)}>
                                         삭제
                                     </TodoBtn>
-
                                     <TodoBtn color="rgb(162, 162, 162)" onClick={() => switchDoneHandle(todo.id)}>
                                         {todo.isDone ? '취소' : '완료'}
                                     </TodoBtn>

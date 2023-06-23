@@ -36,7 +36,6 @@ const AddBtn = styled.button`
 `;
 
 function InputForm() {
-    const todos = useSelector((state) => state.todos);
     const dispatch = useDispatch();
 
     const [title, setTitle] = useState('');
