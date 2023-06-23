@@ -13,6 +13,6 @@ localstorage를 사용해서 추가/수정/삭제/새로고침 시 데이터가 
   - UI 구현
   - Todo 추가
   - Todo 삭제
-  - Todo 완료 상태 변경 (완료 ↔ 진행)
-  - localstorage로 화면값 유지
+  - Todo 완료 상태 변경
   - Todo 상세페이지 이동 구현
+  - localstorage로 화면값 유지 (작업 진행중)
