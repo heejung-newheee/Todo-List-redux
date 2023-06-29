@@ -2,9 +2,11 @@
 import { createStore } from 'redux';
 import { combineReducers } from 'redux';
 import todos from '../modules/todos';
+import theme from '../modules/theme';
 
 const rootReducer = combineReducers({
-    todos
+    todos,
+    theme
 });
 const store = createStore(rootReducer);
 
